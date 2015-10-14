@@ -1,5 +1,5 @@
 {
-  "name": "elegant",
+  "name": "elegant-object",
   "version": "1.0.0",
   "description": "object cleaner for NodeJS",
   "main": "index.js",
