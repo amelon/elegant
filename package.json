@@ -1,0 +1,30 @@
+{
+  "name": "elegant",
+  "version": "1.0.0",
+  "description": "object cleaner for NodeJS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amelon/elegant"
+  },
+  "scripts": {
+    "test": "gulp mocha"
+  },
+  "author": "A. Mélon <paztaga@gmail.com>",
+  "keywords": [
+    "json", "cleaner", "bluebird", "object"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.10.2",
+    "ramda": "^0.18.0",
+    "recursive-iterator": "^2.0.0",
+    "underscore.string": "^3.2.2",
+    "verror": "^1.6.0"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "gulp": "^3.9.0",
+    "gulp-mocha": "^2.1.3"
+  }
+}
