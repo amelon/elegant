@@ -6,13 +6,13 @@ Project is inspired by [indicative](https://github.com/Adonis-Js/indicative)  bu
 
 
 ### Installation
-	npm install elegant --save
+	npm install elegant-object --save
 
 
 
 ### Usage
 
-	var Cleaner = require('elegant');
+	var Cleaner = require('elegant-object');
 
 	var schema = {
 		// simple rule
@@ -70,7 +70,7 @@ Returns a cleaner instance
 
 schema is an object that will apply rules on leaf node.
 
-	var Cleaner = require('elegant');
+	var Cleaner = require('elegant-object');
 
 	var schema = {
 		username: 'clean|toLowerCase',
@@ -98,7 +98,7 @@ Return a promise of a cleaned object
 
 `object` is required
 
-	var Cleaner = require('elegant');
+	var Cleaner = require('elegant-object');
 
 	var schema = {
 		username: 'clean|toLowerCase',
@@ -159,4 +159,3 @@ Rules are taken from [underscore.string](https://github.com/epeli/underscore.str
 * toBoolean
 * toUpperCase
 * toLowerCase
-	
