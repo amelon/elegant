@@ -27,7 +27,7 @@ Project is inspired by [indicative](https://github.com/Adonis-Js/indicative)  bu
 		"f.g": "toNumber"
 	};
 
-	var cleaner = EO(schema);
+	var cleaner = EO();
 
 	var myObject = {
 		a: '  my string ',
@@ -36,7 +36,7 @@ Project is inspired by [indicative](https://github.com/Adonis-Js/indicative)  bu
 		f: { g: '19' }
 	};
 
-	cleaner.clean(myObject)
+	cleaner.clean(myObject, schema)
 	.then(function(newObj) {
 		console.log(newObj);
 	})
@@ -56,14 +56,13 @@ Project is inspired by [indicative](https://github.com/Adonis-Js/indicative)  bu
 ### API
 
 
-#### `constructor(schema)`
+#### `constructor()`
 
 Returns a cleaner instance
 
 ##### Params
 <dl>
-    <dt>schema</dt>
-    <dd>Object</dd>
+
 </dl>
 
 `schema` is required
@@ -72,31 +71,26 @@ schema is an object that will apply rules on leaf node.
 
 	var EO = require('elegant-object');
 
-	var schema = {
-		username: 'clean|toLowerCase',
-		name: {
-		    // trim and
-			first: 'clean|capitalize',
-			last: 'clean|capitalize'
-		}
-	};
-
-	var userCleaning = EO(schema);
+	var userCleaning = EO();
 
 
 
-#### `clean(object)`
+#### `clean(object, [schema])`
 
 Return a promise of a cleaned object
 
+Promise is rejected if one rule is unknown
 
 ##### Params
 <dl>
     <dt>object</dt>
     <dd>Object</dd>
+    <dt>schema</dt>
+    <dd>Object</dd>
 </dl>
 
 `object` is required
+`schema` is optional but the key of cleaning
 
 	var EO = require('elegant-object');
 
@@ -109,7 +103,7 @@ Return a promise of a cleaned object
 		}
 	};
 
-	var userCleaning = EO(schema);
+	var userCleaning = EO();
 
 	var obj = {
 		username: ' ABcDe ',
@@ -119,10 +113,34 @@ Return a promise of a cleaned object
 		}
 	};
 
-	userCleaning.clean(obj)
+	userCleaning.clean(obj, schema)
 	.then(function(cleanedObj) {
 	  // save to db :)
 	});
+
+
+#### Rejection exemple
+
+	var EO = require('elegant-object');
+
+	var schema = {
+		username: 'clean|unknown',
+	};
+
+	var userCleaning = EO();
+
+	var obj = {
+		username: ' ABcDe ',
+	};
+
+	userCleaning.clean(obj, schema)
+	.then(function(cleanedObj) {
+	  // save to db :)
+	})
+	.catch(function(err) {
+		// err.message => error on field `username`: unknown rule `unknown`: field cleaning error
+	});
+
 
 
 ### Rules
