@@ -12,7 +12,7 @@ Project is inspired by [indicative](https://github.com/Adonis-Js/indicative)  bu
 
 ### Usage
 
-	var Cleaner = require('elegant-object');
+	var EO = require('elegant-object');
 
 	var schema = {
 		// simple rule
@@ -27,7 +27,7 @@ Project is inspired by [indicative](https://github.com/Adonis-Js/indicative)  bu
 		"f.g": "toNumber"
 	};
 
-	var cleaner = new Cleaner(schema);
+	var cleaner = EO(schema);
 
 	var myObject = {
 		a: '  my string ',
@@ -70,7 +70,7 @@ Returns a cleaner instance
 
 schema is an object that will apply rules on leaf node.
 
-	var Cleaner = require('elegant-object');
+	var EO = require('elegant-object');
 
 	var schema = {
 		username: 'clean|toLowerCase',
@@ -81,7 +81,7 @@ schema is an object that will apply rules on leaf node.
 		}
 	};
 
-	var userCleaning = new Cleaner(schema);
+	var userCleaning = EO(schema);
 
 
 
@@ -98,7 +98,7 @@ Return a promise of a cleaned object
 
 `object` is required
 
-	var Cleaner = require('elegant-object');
+	var EO = require('elegant-object');
 
 	var schema = {
 		username: 'clean|toLowerCase',
@@ -109,7 +109,7 @@ Return a promise of a cleaned object
 		}
 	};
 
-	var userCleaning = new Cleaner(schema);
+	var userCleaning = EO(schema);
 
 	var obj = {
 		username: ' ABcDe ',

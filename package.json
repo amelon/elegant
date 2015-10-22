@@ -1,6 +1,6 @@
 {
   "name": "elegant-object",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "object cleaner for NodeJS",
   "main": "index.js",
   "repository": {
@@ -12,13 +12,17 @@
   },
   "author": "A. Mélon <paztaga@gmail.com>",
   "keywords": [
-    "json", "cleaner", "bluebird", "object"
+    "json",
+    "cleaner",
+    "bluebird",
+    "object"
   ],
   "license": "MIT",
   "dependencies": {
     "bluebird": "^2.10.2",
     "ramda": "^0.18.0",
     "recursive-iterator": "^2.0.0",
+    "stampit": "^2.1.1",
     "underscore.string": "^3.2.2",
     "verror": "^1.6.0"
   },

@@ -1,0 +1,35 @@
+{
+  "ecmaFeatures": {
+    "blockBindings": true,
+    "forOf": true,
+    "jsx": true,
+    "destructuring": true,
+    "spread": true,
+    "arrowFunctions": true,
+    "blockBindings": true
+  },
+  "rules": {
+    "semi": 1,
+    "no-extra-semi": 1,
+    "semi-spacing": 1,
+    "no-trailing-spaces": 1,
+    "quotes": 0,
+    "no-multi-spaces": [0, { "exceptions": { "VariableDeclarator": true, "Property": true } }],
+    "key-spacing": [0, { "align": "colon", "beforeColon": true, "afterColon": true, "mode": "minimum" }],
+    "strict": 0,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": [2, "nofunc"],
+    "no-mixed-requires": 0,
+    "curly": [2, "multi-line"],
+    "complexity": [1, 6],
+    "no-unused-vars": [1, {"vars": "all", "args": "after-used"}],
+    "no-undef": 2
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "plugins": [
+    "react"
+  ]
+}
